@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center">Journal</h1>
+
+    <div class="content">
+
+        <table>
+            <tr>
+                <th>Entry</th>
+                <th>Date Entered</th>
+                <th>Actions</th>
+            
+            </tr>
+            <tr>
+                {% for entry in entries %}
+                    <tr>
+                        <td>{{ entry.content }}</td>
+                        <td>{{ entry.date.date() }}</td>
+                        <td>
+
+                            <a href="/delete/{{entry.id}}">Delete</a>
+                            <br>
+                            <a href="/update/{{entry.id}}">Edit</a>
+
+                        </td>
+                    </tr>
+                {% endfor %}
+                
+            </tr>
+        </table>
+
+        <div class="form">
+            <form action = '/' method="POST">
+
+                <input type="text" name = "content">
+                <input type="submit" value="Add Entry">
+
+            </form>
+        </div>
+    </div>
+{% endblock %}

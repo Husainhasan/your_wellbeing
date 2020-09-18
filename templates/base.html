@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+
+            body {
+                margin: 0;
+                font-family: sans-serif;
+            }
+
+            .content {
+                margin: 0;
+                width: 400;
+            }
+
+            table, th, td {
+                border: 1px solid;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            th {
+                height: 30px;
+            }
+
+            td {
+                text-align: center;
+                padding: 5px;
+            }
+
+            .form {
+                margin-top: 20px;
+            }
+
+        </style>
+
+        {% block head %}{% endblock %}
+    </head>
+
+    <body>
+       
+        {% block body %}{% endblock %}
+
+    </body>
+</html>
